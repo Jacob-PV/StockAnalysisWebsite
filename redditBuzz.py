@@ -5,7 +5,7 @@ import csv
 from textblob import TextBlob
 from textblob.sentiments import NaiveBayesAnalyzer
 import streamlit as st
-from reddit_keys import user_agent, client_id, client_secret
+#from reddit_keys import user_agent, client_id, client_secret
 
 overview = (
 """This page grabs some of most talked about posts relating to stocks off of reddit."""
@@ -38,9 +38,9 @@ def reddit():
     if call_reddit:
         # init reddit call
         reddit = praw.Reddit(
-            user_agent=user_agent,
-            client_id=client_id,
-            client_secret=client_secret,
+            user_agent=st.secrets["user_agent"],
+            client_id=st.secrets["client_id"],
+            client_secret=st.secrets["client_secret"],
             # only need username and password to post
             #username="USERNAME",
             #password="PASSWORD"
