@@ -1,6 +1,6 @@
 import streamlit as st
 from bestDayPay import bestDay, allChart
-from bollingerBands import bb
+# from bollingerBands import bb
 from redditBuzz import reddit
 from adjustedStockComp import stockComp
 
