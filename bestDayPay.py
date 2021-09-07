@@ -54,7 +54,7 @@ def allChart():
 
     st.header("Irregular or Multiple Paydays/Lump Sum of Money")
     st.text(extra_info)
-    st.write(df)
+    st.table(df)
     best_day = investing_day[end_balance.index(max(end_balance))]
     st.write(f"The largest end balance: ${max(end_balance)} is on the\
     {best_day}{dateSuffixFinder(int(best_day))}")
@@ -145,11 +145,11 @@ def bestDay():
 
     #output graph
     fig = px.line(x = [x for x in range(1, 32)],
-                y = [x for x in end_money],
-                labels={"x": "Day of the Month",
-                    "y":"End Balance ($)"},
-                title = str(time_frame) + " " + ("Years" if time_frame > 1 else "Year") +
-                    f", Payday: {payday}{suffix}, ${round(payout,0)} Monthly Contribution")
+                  y = [x for x in end_money],
+                  labels={"x": "Day of the Month",
+                          "y":"End Balance ($)"},
+                  title = str(time_frame) + " " + ("Years" if time_frame > 1 else "Year") +
+                          f", Payday: {payday}{suffix}, ${round(payout,0)} Monthly Contribution")
     st.plotly_chart(fig)
 
     # output text
